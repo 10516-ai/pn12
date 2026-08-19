@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <link rel="manifest" href="./manifest.json">
+<meta name="theme-color" content="#4A90E2">
+
   <!-- ลิงก์ไปยัง manifest.json -->
   <link rel="manifest" href="./manifest.json">
   <meta name="theme-color" content="#4A90E2">
@@ -1161,13 +1161,13 @@
             goToPage(1);
         }
    <script>
+  <script>
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-      navigator.serviceWorker.register('./sw.js')
-        .then((reg) => console.log('Service Worker ลงทะเบียนสำเร็จ:', reg))
-        .catch((err) => console.log('Service Worker ล้มเหลว:', err));
+      navigator.serviceWorker.register('./sw.js');
     });
-   }
+  }
 </script>
-</body>
+
+   </</body>
 </html>
