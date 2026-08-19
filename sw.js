@@ -5,19 +5,23 @@ const urlsToCache = [
   './manifest.json',
   './android-chrome-192x192.png',
   './android-chrome-512x512.png'
-  // หากมีไฟล์ css หรือ js แยกต่างหาก ให้เพิ่มพาธไว้ที่นี่ด้วย เช่น './style.css', './script.js'
 ];
 
-// ติดตั้ง Cache
 self.addEventListener('install', (event) => {
+  self.skipWaiting();
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
       return cache.addAll(urlsToCache);
+    }).catch((err) => {
+      console.error('Cache install failed:', err);
     })
   );
 });
 
-// เรียกใช้งาน Cache เมื่อออฟไลน์
+self.addEventListener('activate', (event) => {
+  event.waitUntil(clients.claim());
+});
+
 self.addEventListener('fetch', (event) => {
   event.respondWith(
     caches.match(event.request).then((response) => {
