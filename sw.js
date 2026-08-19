@@ -3,8 +3,8 @@ const urlsToCache = [
   './',
   './index.html',
   './manifest.json',
-  './icon-192.png',
-  './icon-512.png'
+  './android-chrome-192x192.png',
+  './android-chrome-512x512.png'
   // หากมีไฟล์ css หรือ js แยกต่างหาก ให้เพิ่มพาธไว้ที่นี่ด้วย เช่น './style.css', './script.js'
 ];
 
